@@ -1,6 +1,10 @@
 # cdp-example-node-frontend
 
-Core delivery platform Node.js Frontend Template.
+Core delivery platform Node.js Frontend example.
+
+Based on the CDP template https://github.com/DEFRA/cdp-node-frontend-template
+
+---
 
 - [Requirements](#requirements)
   - [Node.js](#nodejs)
