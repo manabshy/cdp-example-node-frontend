@@ -1,6 +1,7 @@
 import convict from 'convict'
 import path from 'path'
 
+const oneDay = 1000 * 60 * 60 * 24
 const oneWeek = 7 * 24 * 60 * 60 * 1000
 
 const config = convict({
@@ -43,6 +44,43 @@ const config = convict({
     format: String,
     default: '/cdp-example-node-frontend',
     env: 'APP_PATH_PREFIX'
+  },
+  redisHost: {
+    doc: 'Redis cache host',
+    format: String,
+    default: '127.0.0.1',
+    env: 'REDIS_HOST'
+  },
+  redisUsername: {
+    doc: 'Redis cache username',
+    format: String,
+    default: '',
+    env: 'REDIS_USERNAME'
+  },
+  redisPassword: {
+    doc: 'Redis cache password',
+    format: '*',
+    default: '',
+    sensitive: true,
+    env: 'REDIS_PASSWORD'
+  },
+  redisKeyPrefix: {
+    doc: 'Redis cache key prefix name used to isolate the cached results across multiple clients',
+    format: String,
+    default: 'cdp-example-node-frontend',
+    env: 'REDIS_KEY_PREFIX'
+  },
+  redisTtl: {
+    doc: 'Redis cache global ttl',
+    format: Number,
+    default: oneDay,
+    env: 'REDIS_TTL'
+  },
+  useSingleInstanceCache: {
+    doc: 'Enable the use of a single instance Redis Cache',
+    format: Boolean,
+    default: process.env.NODE_ENV !== 'production',
+    env: 'USE_SINGLE_INSTANCE_CACHE'
   },
   isProduction: {
     doc: 'If this application running in the production environment',
