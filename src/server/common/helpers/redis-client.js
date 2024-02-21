@@ -32,7 +32,7 @@ function buildRedisClient() {
         }
       ],
       {
-        slotsRefreshTimeout: 2000,
+        slotsRefreshTimeout: 10000,
         dnsLookup: (address, callback) => callback(null, address),
         redisOptions: {
           username: config.get('redisUsername'),
