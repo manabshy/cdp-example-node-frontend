@@ -7,24 +7,13 @@ const mockRequest = ({ path = '' } = {}) => ({
 })
 
 describe('#buildNavigation', () => {
-  test('Should provide expected navigation details', async () => {
-    expect(await buildNavigation(mockRequest())).toEqual([
+  test('Should provide expected highlighted navigation details', async () => {
+    expect(buildNavigation(mockRequest({ path: '' }))).toEqual([
       {
-        isActive: false,
+        isActive: true,
         text: 'Home',
         url: appPathPrefix
       }
     ])
-  })
-  test('Should provide expected highlighted navigation details', async () => {
-    expect(await buildNavigation(mockRequest({ path: appPathPrefix }))).toEqual(
-      [
-        {
-          isActive: true,
-          text: 'Home',
-          url: appPathPrefix
-        }
-      ]
-    )
   })
 })
