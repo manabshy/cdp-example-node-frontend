@@ -42,7 +42,7 @@ const config = convict({
   appPathPrefix: {
     doc: 'Application url path prefix',
     format: String,
-    default: '/cdp-example-node-frontend',
+    default: '',
     env: 'APP_PATH_PREFIX'
   },
   redisHost: {
