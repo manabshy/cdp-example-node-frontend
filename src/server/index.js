@@ -62,15 +62,7 @@ async function createServer() {
 
   await server.register(requestLogger)
 
-  const appPathPrefix = config.get('appPathPrefix')
-
-  if (!appPathPrefix || appPathPrefix === '/') {
-    await server.register(router)
-  } else {
-    await server.register(router, {
-      routes: { prefix: appPathPrefix }
-    })
-  }
+  await server.register(router)
 
   await server.register(nunjucksConfig)
 

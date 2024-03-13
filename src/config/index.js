@@ -39,12 +39,6 @@ const config = convict({
     default: '/public',
     env: 'ASSET_PATH'
   },
-  appPathPrefix: {
-    doc: 'Application url path prefix',
-    format: String,
-    default: '',
-    env: 'APP_PATH_PREFIX'
-  },
   redisHost: {
     doc: 'Redis cache host',
     format: String,
