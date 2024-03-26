@@ -9,7 +9,7 @@ const homeController = {
           href: '/'
         },
         {
-          text: 'Example'
+          text: 'Plant'
         }
       ]
     })

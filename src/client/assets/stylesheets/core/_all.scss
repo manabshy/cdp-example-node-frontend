@@ -1,2 +1,23 @@
 @import "header";
 @import "main";
+
+/**
+ * A search input and floating button based on GOV.UK frontend styles
+ */
+.search__input {
+    @extend .govuk-input;
+    margin-bottom: 15px;
+
+    @include govuk-media-query($from: tablet) {
+        width: 66%;
+        margin-bottom: 0;
+    }
+}
+
+.search__button {
+    @extend .govuk-button;
+
+    @include govuk-media-query($from: tablet) {
+        margin-bottom: 0;
+    }
+}
