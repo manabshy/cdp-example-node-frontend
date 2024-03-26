@@ -38,8 +38,10 @@
     "@babel/runtime": "7.23.9",
     "@elastic/ecs-pino-format": "1.5.0",
     "@hapi/catbox-redis": "7.0.2",
+    "@hapi/code": "9.0.3",
     "@hapi/hapi": "21.3.3",
     "@hapi/inert": "7.1.0",
+    "@hapi/lab": "25.2.0",
     "@hapi/vision": "7.0.3",
     "babel-plugin-module-resolver": "5.0.0",
     "convict": "6.2.4",
@@ -52,6 +54,7 @@
     "node-fetch": "2.7.0",
     "nunjucks": "3.2.4",
     "pino": "8.18.0",
+    "sinon": "17.0.1",
     "undici": "6.6.2"
   },
   "devDependencies": {

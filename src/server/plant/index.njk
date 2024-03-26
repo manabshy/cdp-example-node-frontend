@@ -1,0 +1,34 @@
+{% extends 'layouts/page.njk' %}
+{% block content %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% call appPageBody() %}
+<form  id="itembox" action='/plant' method="get"  name="radios" value="ni">
+{{ govukRadios({
+  name: "WhereAreYouImportingInto",
+  fieldset: {
+    legend: {
+      text: "Where are you importing into?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "gb",
+      text: "Great Britain (England, Scotland and Wales)"
+    },
+    {
+      value: "ni",
+      text: "Northern Ireland"
+    }
+  ]
+}) }}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+</form>
+{% endcall %}
+{% endblock %}
