@@ -1,20 +1,73 @@
 {% extends 'layouts/page.njk' %}
 {% block content %}
-{% from "govuk/components/input/macro.njk" import govukInput %}
-{% call appPageBody() %}
-{{ govukInput({
-  label: {
-    text: "Search for a plant, pest or disease",
-    classes: "govuk-label--l",
-    isPageHeading: true
-  },
-  id: "event-name",
-  name: "eventName"
-}) }}
-{% from "govuk/components/button/macro.njk" import govukButton %}
+<a href="#" class="govuk-back-link">Back</a>
 
-{{ govukButton({
-  text: "Search"
-}) }}
-{% endcall %}
+  {% call appPageBody() %}
+  {% set myArray = ['plant_1', 'plant_2', 'plant_3'] %}
+  <form method="[object Object]" action="" novalidate="">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="query">
+            Search
+          </label>
+        </h1>
+      </legend>
+      <div class="govuk-form-group ">
+        <span id="search-hint" class="govuk-hint" [style]="width:66%">
+          Search for a plant,pest or a disease
+        </span>
+        <div class="search">
+          <input class="search__input" id="query" name="query" type="search" aria-describedby="search-hint" value="">
+          <button id="submitButton" data-module="govuk-button" class="search__button">Search</button>
+        </div>
+      </div>
+      <ul id="searchResults" style="display: none;"></ul>
+    </fieldset>
+  </form>
+  <script>
+
+    var searchInput = document.getElementById('query');
+    var searchResults = document.getElementById('searchResults');
+    searchInput.addEventListener('input', function () {
+      var inputValue = this.value.toLowerCase();
+      {# var suggestions = myArray;
+      if (inputValue) {
+        suggestions = myArray.filter(function (item) {
+          return item.toLowerCase().indexOf(inputValue) !== -1;
+        });
+      } #}
+      {# renderSuggestions(suggestions); #}
+      fetchSuggestions();
+    });
+    function fetchSuggestions(query) { // Mock API endpoint URL
+      var apiUrl = 'http://localhost:3004/mock-api/products';
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => renderSuggestions(data))
+        .catch(error => console.error('Error fetching suggestions:', error));
+    }
+    function renderSuggestions(suggestions) {
+      var searchInput = document.getElementById('query')?.value;
+      searchResults.innerHTML = '';
+
+      suggestions = suggestions.filter(function (item) {
+        return item?.name?.toLowerCase().indexOf(searchInput) !== -1;
+      });
+      console.log('suggestions:',  suggestions)
+            suggestions.forEach(function (item) {
+        console.log(item)
+        var li = document.createElement('li');
+        li.textContent = item.name;
+        searchResults.appendChild(li);
+      });
+      if ( suggestions.length > 0 && searchInput !== '') {
+        searchResults.style.display = 'block';
+      } else {
+        searchResults.innerHTML = '';
+        searchResults.style.display = 'none';
+      }
+    }
+  </script>
+  {% endcall %}
 {% endblock %}
