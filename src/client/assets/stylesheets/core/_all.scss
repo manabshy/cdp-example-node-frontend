@@ -1,15 +1,25 @@
 @import "header";
 @import "main";
 
+// ========== ========== ========== ========== ==========
+// Colored hr for start page
+// ========== ========== ========== ========== =========
  .horizontal_line {
     border-top: 2px solid govuk-colour("blue");
+  }
+// ========== ========== ========== ========== ==========
+// Grey Background for start page
+// ========== ========== ========== ========== =========
+
+  .div-background {
+    background-color: govuk-colour("light-grey");
   }
 // ========== ========== ========== ========== ==========
 // A search input and floating button based on GOV.UK frontend styles
 // ========== ========== ========== ========== ==========
 
 .search__input {
-    @extend %govuk-input;
+    @extend %govuk-input !optional;
     margin-bottom: 15px;
 
     @include govuk-media-query($from: tablet) {
@@ -19,7 +29,7 @@
 }
 
 .search__button {
-    @extend %govuk-button;
+    @extend %govuk-button !optional;
 
     @include govuk-media-query($from: tablet) {
         margin-bottom: 0;

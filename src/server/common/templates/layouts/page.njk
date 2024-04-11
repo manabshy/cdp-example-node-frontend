@@ -18,7 +18,7 @@
   <link href="{{ getAssetPath('application.css') }}" rel="stylesheet">
 {% endblock %}
 
-{% block header %}
+{# {% block header %}
   {{ govukHeader({
     homepageUrl: "https://www.gov.uk/",
     classes: "app-header",
@@ -28,18 +28,36 @@
     useTudorCrown: true
   }) }}
   {% include "partials/navigation.njk" %}
-{% endblock %}
+{% endblock %} #}
 
 {% block pageTitle %}
   {{ pageTitle }} | {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
-  {% if breadcrumbs.length > 1 %}
+  {# {% if breadcrumbs.length > 1 %}
     {{ appBreadcrumbs({
       items: breadcrumbs
     }) }}
-  {% endif %}
+  {% endif %} #}
+  {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "/"
+    },
+    {
+      text: "Environment",
+      href: "/"
+    },
+    {
+      text: "Animal and plant health",
+      href: "/"
+    }
+  ]
+}) }}
 {% endblock %}
 
 {% block content %}{% endblock %}

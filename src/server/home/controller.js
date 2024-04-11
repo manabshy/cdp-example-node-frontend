@@ -9,7 +9,12 @@ const homeController = {
           href: '/'
         },
         {
-          text: 'Plant'
+          text: 'Environment',
+          href: '/'
+        },
+        {
+          text: 'Animal and plant health',
+          href: '/'
         }
       ]
     })
