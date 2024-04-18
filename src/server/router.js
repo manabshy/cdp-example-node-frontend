@@ -20,7 +20,14 @@ const router = {
     name: 'router',
     register: async (server) => {
       await server.register([inert])
-      await server.register([ health, home, plant, planthealth, purposeofvisit, serveStaticFiles ])
+      await server.register([
+        health,
+        home,
+        plant,
+        planthealth,
+        purposeofvisit,
+        serveStaticFiles
+      ])
       await server.register({
         plugin: yar,
         options

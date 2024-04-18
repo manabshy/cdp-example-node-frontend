@@ -18,7 +18,7 @@ const purposeOfVisitController = {
         const radiooption = request?.yar?.get('radiooption')
         importq = radiooption?.purposeOfVisit
         request.yar.set('radiooption', null)
-        if (!importq){
+        if (!importq) {
           request.yar.set('errors', {
             errors: {
               titleText: 'There is a problem',
