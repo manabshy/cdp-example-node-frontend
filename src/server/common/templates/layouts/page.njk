@@ -1,5 +1,6 @@
 {% extends "govuk/template.njk" %}
 
+{% from "error-summary/macro.njk" import govukErrorSummary %}
 {% from "page-body/macro.njk" import appPageBody %}
 {% from "breadcrumbs/macro.njk" import appBreadcrumbs %}
 {% from "heading/macro.njk" import appHeading %}
@@ -35,29 +36,11 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {# {% if breadcrumbs.length > 1 %}
+  {% if breadcrumbs.length > 1 %}
     {{ appBreadcrumbs({
       items: breadcrumbs
     }) }}
-  {% endif %} #}
-  {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
-
-{{ govukBreadcrumbs({
-  items: [
-    {
-      text: "Home",
-      href: "/"
-    },
-    {
-      text: "Environment",
-      href: "/"
-    },
-    {
-      text: "Animal and plant health",
-      href: "/"
-    }
-  ]
-}) }}
+  {% endif %}
 {% endblock %}
 
 {% block content %}{% endblock %}

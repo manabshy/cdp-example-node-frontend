@@ -63,10 +63,26 @@
             {{ 
           govukButton({
             text: "Start now",
-            href: "#",
+            href: "/plant-health",
             isStartButton: true
         }) 
         }}
+            <h3 class="govuk-heading-m">Before you start</h3>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">You'll need the name of the plant/ plant product/ pest or disease to find plant
+          health
+          information</p>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">You can use:</p>
+            <ul class="govuk-body-s govuk-!-margin-bottom-1">
+              <li>the scientific name or any synonyms</li>
+              <li>a common name in some cases</li>
+            </ul>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">This service</p>
+            <ul class="govuk-body-s govuk-!-margin-bottom-1">
+              <li>does not provide trade information about exporting plants or plant products</li>
+              <li>it is not a pest or disease identification service</li>
+              <li>does not have information about pests and diseases native to Great Britain</li>
+            </ul>
+
           </div>
           <div class="govuk-grid-column-one-third">
             <hr class="horizontal_line govuk-section-break govuk-section-break--visible">
@@ -108,25 +124,7 @@
             </div>
           </div>
         </div>
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds">
-            <h3 class="govuk-heading-m">Before you start</h3>
-            <p class="govuk-body-s govuk-!-margin-bottom-1">You'll need the name of the plant, plant product, pest or disease to find plant
-          health
-          information</p>
-            <p class="govuk-body-s govuk-!-margin-bottom-1">You can use:</p>
-            <ul class="govuk-body-s govuk-!-margin-bottom-1">
-              <li>the scientific name or any synonyms</li>
-              <li>a common name in some cases</li>
-            </ul>
-            <p class="govuk-body-s govuk-!-margin-bottom-1">This service</p>
-            <ul class="govuk-body-s govuk-!-margin-bottom-1">
-              <li>Does not provide trade information about exporting plants or plant products</li>
-              <li>It is not a pest or disease identification service</li>
-              <li>does not have information about pests and diseases native to Great Britain</li>
-            </ul>
-          </div>
-        </div>
+
         {% include "partials/get-help.njk" %}
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
