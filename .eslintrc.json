@@ -13,7 +13,12 @@
   },
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     "no-console": "error"
   },
   "ignorePatterns": [".server", ".public", "src/__fixtures__", "coverage"]
