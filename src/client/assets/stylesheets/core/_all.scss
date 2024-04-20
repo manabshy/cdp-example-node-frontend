@@ -14,6 +14,13 @@
   .div-background {
     background-color: govuk-colour("light-grey");
   }
+
+// ========== ========== ========== ========== ==========
+// solid border for a div 
+// ========== ========== ========== ========== =========
+  .solid-div {
+    border-style: solid;
+  }
 // ========== ========== ========== ========== ==========
 // A search input and floating button based on GOV.UK frontend styles
 // ========== ========== ========== ========== ==========

@@ -4,7 +4,7 @@ const purposeOfVisitController = {
       let importq
       if (request.query.whatdoyouwanttofind === 'importrules') {
         request.yar.set('radiooption', { purposeOfVisit: 'importrules' })
-        return h.view('plant/index', {
+        return h.view('plant-health/import-confirmation/index', {
           pageTitle: 'Plant',
           heading: 'Plant'
         })
