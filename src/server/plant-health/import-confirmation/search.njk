@@ -20,23 +20,24 @@
     {% from "govuk/components/input/macro.njk" import govukInput %}
 
     {{ govukInput({
-  label: {
-    text: "What plant or plant product are you importing?",
-    classes: "govuk-label--l",
-    isPageHeading: true
-  },
-  hint: {
-    text: "You can enter the scientific name or any synonyms or common names."
-  },
-  id: "query",
-  name: "query"
-}) }}
+      label: {
+        text: "What plant or plant product are you importing?",
+        classes: "govuk-label--l",
+        isPageHeading: true
+      },
+      hint: {
+        text: "You can enter the scientific name or any synonyms or common names."
+      },
+      id: "query",
+      name: "query"
+    }) }}
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
     {{ govukButton({
-  text: "Continue",
-  id: "submitButton"
-}) }}
+      text: "Continue",
+      id: "submitButton"
+    }) }}
+    <ul id="searchResults" style="display: none;"></ul>
   </form>
   <script>
 
@@ -46,8 +47,7 @@
       var inputValue = this
         .value
         .toLowerCase();
-      {
-        # var suggestions = myArray;
+      {# var suggestions = myArray;
         if (inputValue) {
           suggestions = myArray.filter(function (item) {
             return item
@@ -55,11 +55,7 @@
               .indexOf(inputValue) !== -1;
           });
         }
-        #
-    } {
-      # renderSuggestions(suggestions);
-      #
-    }
+        # } {# renderSuggestions(suggestions); #}
     fetchSuggestions();
   });
   function fetchSuggestions(query) { // Mock API endpoint URL
@@ -67,20 +63,14 @@
     fetch(apiUrl)
       .then(response => response.json())
       .then(data => renderSuggestions(data))
-      .catch(error => console.error('Error fetching suggestions:', error));
+      .catch(error => console.log('Error fetching suggestions:', error));
   }
   function renderSuggestions(suggestions) {
-    var searchInput = document.getElementById('query')
-      ?.value;
+    var searchInput = document.getElementById('query')?.value;
     searchResults.innerHTML = '';
 
     suggestions = suggestions.filter(function (item) {
-      return item
-        ?
-            .name
-            ?
-            .toLowerCase()
-            .indexOf(searchInput) !== -1;
+      return item?.name?.toLowerCase().indexOf(searchInput) !== -1;
     });
     console.log('suggestions:', suggestions)
     suggestions.forEach(function (item) {
