@@ -1,16 +1,20 @@
 const importConfirmationController = {
   handler: (request, h) => {
     if (request != null) {
-      let importq
+      let radiobuttonValue
       if (request.query.whereareyouimportinginto === 'gb') {
-        importq = request.query.Whereareyouimportinginto
-        request.yar.set('radiooption', { whereareyouimportinginto: 'gb' })
+        radiobuttonValue = request.query.Whereareyouimportinginto
+        request.yar.set('importConfirmationRadiooption', {
+          whereareyouimportinginto: 'gb'
+        })
         return h.view('plant-health/import-confirmation/search', {
           pageTitle: 'ImportConfirmation',
           heading: 'ImportConfirmation'
         })
       } else if (request.query.whereareyouimportinginto === 'ni') {
-        request.yar.set('radiooption', { whereareyouimportinginto: 'ni' })
+        request.yar.set('importConfirmationRadiooption', {
+          whereareyouimportinginto: 'ni'
+        })
         return h.view(
           'plant-health/import-confirmation/service-unavailable.njk',
           {
@@ -22,10 +26,9 @@ const importConfirmationController = {
         request.yar.set('errors', '')
         request.yar.set('errorMessage', '')
         request.yar.set('errorMessageRadio', '')
-        const radiooption = request?.yar?.get('radiooption')
-        importq = radiooption?.whereareyouimportinginto
-        request.yar.set('radiooption', null)
-        if (!importq) {
+        const radiooption = request?.yar?.get('importConfirmationRadiooption')
+        radiobuttonValue = radiooption?.whereareyouimportinginto
+        if (!radiobuttonValue) {
           request.yar.set('errors', {
             errors: {
               titleText: 'There is a problem',
@@ -48,7 +51,7 @@ const importConfirmationController = {
         return h.view('plant-health/import-confirmation/index', {
           pageTitle: 'ImportConfirmation',
           heading: 'ImportConfirmation',
-          importq: importq,
+          radiobuttonValue: radiobuttonValue,
           errors: errors?.errors,
           errorMessage: errorMessage?.errorMessage,
           errorMessageRadio: errorMessage?.errorMessage

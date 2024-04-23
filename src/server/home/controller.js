@@ -1,5 +1,6 @@
 const homeController = {
   handler: (request, h) => {
+    request.yar.set('startnowButton', true)
     return h.view('home/index', {
       pageTitle: 'Home',
       heading: '',
