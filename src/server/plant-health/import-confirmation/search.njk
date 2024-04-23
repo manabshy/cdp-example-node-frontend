@@ -31,13 +31,13 @@
       id: "query",
       name: "query"
     }) }}
+    <ul id="searchResults" style="display: none;"></ul>
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
     {{ govukButton({
       text: "Continue",
       id: "submitButton"
     }) }}
-    <ul id="searchResults" style="display: none;"></ul>
   </form>
   <script>
 
