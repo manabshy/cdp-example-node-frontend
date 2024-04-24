@@ -18,7 +18,7 @@ const plantHealthController = {
       return h.view('plant-health/index', {
         pageTitle: 'Plant',
         heading: 'Plant',
-        radiobuttonValue: radiobuttonValue
+        radiobuttonValue
       })
     }
   }
