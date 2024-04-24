@@ -1,0 +1,21 @@
+{% extends 'layouts/page.njk' %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="solid-div govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-m govuk-!-margin-top-2">Pest or disease information unavailable</h1>
+      <p class="govuk-body">
+        You cannot currently use this service to lookup pests or diseases. We will add this information soon</p>
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+            {{ 
+          govukButton({
+            text: "Go back",
+            href: "/plant-health"
+        }) 
+        }}
+    </div>
+  </div>
+
+ 
+
+{% endblock %}

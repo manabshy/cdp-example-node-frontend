@@ -1,0 +1,46 @@
+{% extends 'layouts/page.njk' %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% block beforeContent %}
+  <a href="/" class="govuk-back-link" type='button'>Back</a>
+{% endblock %}
+{% block content %}
+{% call appPageBody() %}
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+ {% if errors %}
+    {{ govukErrorSummary(errors) }}
+  {% endif %}
+<form  id="itembox" action='/plant-health/purpose-of-visit' method="get"  name="radios">
+{{ govukRadios({
+  name: "whatdoyouwanttofind",
+  errorMessage: errorMessageRadio,
+  fieldset: {
+    legend: {
+      text: "What do you want to find?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "importrules",
+      text: "Plant or plant product import rules",
+      checked: radiobuttonValue === 'importrules'
+    },
+    {
+      value: "pest",
+      text: "Pest or disease information",
+      checked: radiobuttonValue === 'pest'
+    }
+  ]
+}) }}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+</form>
+ {% include "partials/get-help.njk" %}
+{% endcall %}
+{% endblock %}

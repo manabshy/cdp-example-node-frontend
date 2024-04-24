@@ -1,0 +1,45 @@
+{% extends 'layouts/page.njk' %}
+{% block beforeContent %}
+  <a href="/plant-health" class="govuk-back-link" type='button'>Back</a>
+{% endblock %}
+{% block content %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% call appPageBody() %}
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+ {% if errors %}
+    {{ govukErrorSummary(errors) }}
+  {% endif %}
+<form  id="itembox" action='/plant-health/import-confirmation' method="get"  name="radios" value="ni">
+{{ govukRadios({
+  name: "whereareyouimportinginto",
+  errorMessage: errorMessageRadio,
+  fieldset: {
+    legend: {
+      text: "Where are you importing plant or plant product into?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "gb",
+      text: "Great Britain (England, Scotland and Wales)",
+      checked: radiobuttonValue === 'gb'
+    },
+    {
+      value: "ni",
+      text: "Northern Ireland",
+      checked: radiobuttonValue === 'ni'
+    }
+  ]
+}) }}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+</form>
+{% include "partials/get-help.njk" %}
+{% endcall %}
+{% endblock %}
