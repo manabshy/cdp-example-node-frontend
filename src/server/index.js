@@ -9,10 +9,20 @@ import { requestLogger } from '~/src/server/common/helpers/logging/request-logge
 import { catchAll } from '~/src/server/common/helpers/errors'
 import { secureContext } from '~/src/server/common/helpers/secure-context'
 import { buildRedisClient } from '~/src/server/common/helpers/redis-client'
+import { method } from 'lodash'
 
 const client = buildRedisClient()
 const isProduction = config.get('isProduction')
 
+const i18n = require('i18n');
+console.log('_MJ __dirname', __dirname);
+i18n.configure({
+  locales: ['en'],
+  directory: path.join(__dirname, 'locales'),
+  defaultLocale: 'en',
+  objectNotation: true,
+  updateFiles: false,
+});
 async function createServer() {
   const server = hapi.server({
     port: config.get('port'),
@@ -49,7 +59,7 @@ async function createServer() {
       }
     ]
   })
-
+  
   server.app.cache = server.cache({
     cache: 'session',
     segment: config.get('redisKeyPrefix'),

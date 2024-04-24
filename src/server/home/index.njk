@@ -7,13 +7,13 @@
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="query">
-            Search
+            {{search}}
           </label>
         </h1>
       </legend>
       <div class="govuk-form-group ">
         <span id="search-hint" class="govuk-hint" [style]="width:66%">
-          Search for a plant,pest or a disease
+            {{searchTitle}}
         </span>
         <div class="search">
           <input class="search__input" id="query" name="query" type="search" aria-describedby="search-hint" value="">
