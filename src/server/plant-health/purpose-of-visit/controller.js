@@ -42,7 +42,7 @@ const purposeOfVisitController = {
         return h.view('plant-health/index', {
           pageTitle: 'Plant',
           heading: 'Plant',
-          radiobuttonValue: radiobuttonValue,
+          radiobuttonValue,
           errors: errors?.errors,
           errorMessage: errorMessage?.errorMessage,
           errorMessageRadio: errorMessage?.errorMessage

@@ -51,7 +51,7 @@ const importConfirmationController = {
         return h.view('plant-health/import-confirmation/index', {
           pageTitle: 'ImportConfirmation',
           heading: 'ImportConfirmation',
-          radiobuttonValue: radiobuttonValue,
+          radiobuttonValue,
           errors: errors?.errors,
           errorMessage: errorMessage?.errorMessage,
           errorMessageRadio: errorMessage?.errorMessage
