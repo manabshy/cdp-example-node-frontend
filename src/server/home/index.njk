@@ -7,6 +7,7 @@
           <span class="govuk-caption-l">{{govukCaption}}</span>
           <h1 class="govuk-heading-l">{{govukHeading}}</h1>
           <p class="govuk-body-l">{{govukBodyTitle}}</p>
+        </p>
         </div>
         <div class="govuk-grid-column-full">
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -16,45 +17,37 @@
         <div class="govuk-grid-column-two-thirds">
           <p class="govuk-body">
             <dl>
-              <dt class="govuk-!-margin-bottom-1">From:
-              <a href="https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs">
-                Department for Environment, Food & Rural Affairs</a> and
-              <a href="https://www.gov.uk/government/organisations/animal-and-plant-health-agency">
-                Animal and Plant Health Agency</a>
+              <dt class="govuk-!-margin-bottom-1">{{publishedSection.publishedOtherText.t1}} 
+              <a href={{publishedSection.publishedUrl.a1.href1}}>
+                {{publishedSection.publishedUrl.a1.text1}}</a> {{publishedSection.publishedOtherText.t2}}
+              <a href={{publishedSection.publishedUrl.a2.href2}}>
+                {{publishedSection.publishedUrl.a2.text2}}</a>
               </dt>
-              <dt class="govuk-!-margin-bottom-1">Published 14 December 2023</dt>
-              <dt class="govuk-!-margin-bottom-1">Last updated 23 February 2024 —
+              <dt class="govuk-!-margin-bottom-1">{{publishedSection.publishedDates.text1}}</dt>
+              <dt class="govuk-!-margin-bottom-1">{{publishedSection.publishedDates.text2}}
               <a
-                href="https://www.gov.uk/guidance/import-plants-and-plant-products-from-the-eu-to-great-britain#full-publication-update-history">
-                See all updates</a>
+                href={{publishedSection.publishedUpdates.href}}>
+                {{publishedSection.publishedUpdates.text}}</a>
               </dt>
+              </dl>
             </p>
           </div>
         </div>
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
             <div class="div-background govuk-!-padding-bottom-1 govuk-!-padding-top-2">
-              <h1 class="govuk-!-margin-bottom-2 govuk-!-margin-left-2 govuk-heading-s" id="query" name="query">Applies to
-          England, Scotland and Wales</h1>
+              <h1 class="govuk-!-margin-bottom-2 govuk-!-margin-left-2 govuk-heading-s" id="query" name="query">{{appliesToSection.appliesToText}}</h1>
               <p class="govuk-body-s govuk-!-margin-left-2">
                 <a
-            href="https://www.daera-ni.gov.uk/publications/import-requirements-plants-plant-produce-and-other-objects">
-            Guidance for Northern Ireland</a>
+            href={{appliesToSection.appliesToUrl.href}}>
+            {{appliesToSection.appliesToUrl.text}}</a>
               </p>
             </div>
-            <p class="govuk-body-s govuk-!-margin-bottom-2 govuk-!-margin-top-2"> Use this service to find out</p>
-            <ul>
-              <li>
-                <p class="govuk-body-s govuk-!-margin-bottom-1">the latest rules for importing plants or plant products</p>
-              </li>
-              <li>
-                <p class="govuk-body-s govuk-!-margin-bottom-1">if a plant could carry pests and diseases that need reporting
-            </p>
-              </li>
-              <li>
-                <p class="govuk-body-s govuk-!-margin-bottom-1">current information on non-native plants pests and diseases
-              that are a risk to Great Britain</p>
-              </li>
+            <p class="govuk-body-s govuk-!-margin-bottom-2 govuk-!-margin-top-2">{{textBeforeStartNowSection.paragraphText1}}</p>
+            <ul class="govuk-body-s govuk-!-margin-bottom-1">
+              <li>{{textBeforeStartNowSection.bulletText1}}</li>
+              <li>{{textBeforeStartNowSection.bulletText2}}</li>
+              <li class="govuk-!-margin-bottom-4">{{textBeforeStartNowSection.bulletText3}}</li>
             </ul>
             {% from "govuk/components/button/macro.njk" import govukButton %}
             {{ 
@@ -64,59 +57,56 @@
             isStartButton: true
         }) 
         }}
-            <h3 class="govuk-heading-m">Before you start</h3>
-            <p class="govuk-body-s govuk-!-margin-bottom-1">You'll need the name of the plant/ plant product/ pest or disease to find plant
-          health
-          information</p>
-            <p class="govuk-body-s govuk-!-margin-bottom-1">You can use:</p>
+            <h3 class="govuk-heading-m">{{textAfterStartNowSection.headerText}}</h3>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">{{textAfterStartNowSection.paragraphText1}}</p>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">{{textAfterStartNowSection.paragraphText2}}</p>
             <ul class="govuk-body-s govuk-!-margin-bottom-1">
-              <li>the scientific name or any synonyms</li>
-              <li>a common name in some cases</li>
+              <li>{{textAfterStartNowSection.bulletText1}}</li>
+              <li>{{textAfterStartNowSection.bulletText2}}</li>
             </ul>
-            <p class="govuk-body-s govuk-!-margin-bottom-1">This service</p>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">{{textAfterStartNowSection.paragraphText3}}</p>
             <ul class="govuk-body-s govuk-!-margin-bottom-1">
-              <li>does not provide trade information about exporting plants or plant products</li>
-              <li>it is not a pest or disease identification service</li>
-              <li>does not have information about pests and diseases native to Great Britain</li>
+              <li>{{textAfterStartNowSection.bulletText3}}</li>
+              <li>{{textAfterStartNowSection.bulletText4}}</li>
+              <li>{{textAfterStartNowSection.bulletText5}}/li>
             </ul>
 
           </div>
           <div class="govuk-grid-column-one-third">
             <hr class="horizontal_line govuk-section-break govuk-section-break--visible">
-            <h2 class="govuk-heading-s govuk-!-margin-top-1">Related content</h2>
+            <h2 class="govuk-heading-s govuk-!-margin-top-1">{{relatedContentSection.headerText}}</h2>
             <div class="govuk-body-s">
               <p class="govuk-body-s govuk-!-margin-bottom-1">
                 <a
-              href="https://www.gov.uk/guidance/import-plants-and-plant-products-from-the-eu-to-great-britain#register-and-pre-notify-your-goods-on-the-relevant-import-it-system">
-              Import plants and plant products from the EU to Great Britain</a>
+              href={{relatedContentSection.relatedurls.a1.href1}}>
+              {{relatedContentSection.relatedurls.a1.text1}}</a>
               </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">
                 <a
-              href="https://www.gov.uk/guidance/import-plants-and-plant-products-from-non-eu-countries-to-great-britain">
-              Import plants and plant products from non-EU countries to Great Britain</a>
+              href={{relatedContentSection.relatedurls.a2.href2}}>
+              {{relatedContentSection.relatedurls.a2.text2}}</a>
               </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">
-                <a href="https://www.gov.uk/guidance/import-high-risk-food-and-feed-not-of-animal-origin-from-the-eu-to-great-britain">
-              Import high-risk food and feed not of animal origin from the EU to Great Britain</a>
+                <a href={{relatedContentSection.relatedurls.a3.href3}}>
+              {{relatedContentSection.relatedurls.a3.text3}}</a>
               </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">
-                <a href="https://www.gov.uk/guidance/import-of-products-animals-food-and-feed-system">
-              Import of products, animals, food and feed system (IPAFFS)</a>
+                <a href={{relatedContentSection.relatedurls.a4.href4}}>
+              {{relatedContentSection.relatedurls.a4.text4}}</a>
               </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">
-                <a href="https://www.gov.uk/guidance/cites-imports-and-exports">
-              Import or export endangered species: check if you need a CITES permit</a>
+                <a href={{relatedContentSection.relatedurls.a5.href5}}>
+              {{relatedContentSection.relatedurls.a5.text5}}</a>
               </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">
-                <a href="https://www.gov.uk/guidance/comply-with-marketing-standards-for-fresh-fruit-and-vegetables">
-              Fresh fruit and vegetable marketing standard</a>
+                <a href={{relatedContentSection.relatedurls.a6.href6}}>
+              {{relatedContentSection.relatedurls.a6.text6}}</a>
               </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">
-                <a href="https://www.gov.uk/guidance/plant-health-controls">Plant health controls</a>
+                <a href={{relatedContentSection.relatedurls.a7.href7}}>{{relatedContentSection.relatedurls.a7.text7}}</a>
               </p>
               <p class="govuk-body-s">
-                <a href="https://planthealthportal.defra.gov.uk/pests-and-diseases/reporting-a-pestdisease/">Reporting a
-              plant pest or disease</a>
+                <a href={{relatedContentSection.relatedurls.a8.href8}}>{{relatedContentSection.relatedurls.a8.text8}}</a>
               </p>
             </div>
           </div>
@@ -128,11 +118,11 @@
             <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
             <p class="govuk-body">
               <dl>
-                <dt class="govuk-!-margin-bottom-1">Published 14 December 2023</dt>
-                <dt class="govuk-!-margin-bottom-1">Last updated 23 February 2024 —
+                <dt class="govuk-!-margin-bottom-1">{{publishedSection.publishedDates.text1}}</dt>
+                <dt class="govuk-!-margin-bottom-1">{{publishedSection.publishedDates.text2}}
               <a
-                href="https://www.gov.uk/guidance/import-plants-and-plant-products-from-the-eu-to-great-britain#full-publication-update-history">
-                See all updates</a>
+                href={{publishedSection.publishedUpdates.href}}>
+                {{publishedSection.publishedUpdates.text}}</a>
                 </dt>
               </p>
             </div>
