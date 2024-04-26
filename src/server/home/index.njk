@@ -111,7 +111,7 @@
             </div>
           </div>
         </div>
-
+        {% set supportSection = { title: getHelpSection.titleText, supportMail: getHelpSection.supportUrl.href, email: getHelpSection.supportUrl.email, description: getHelpSection.supportUrl.text } %}
         {% include "partials/get-help.njk" %}
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">

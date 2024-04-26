@@ -10,6 +10,7 @@ const homeController = {
     const textBeforeStartNowSection = data?.textBeforeStartNowSection
     const textAfterStartNowSection = data?.textAfterStartNowSection
     const relatedContentSection = data?.relatedContentSection
+    const getHelpSection = data?.getHelpSection
 
     return h.view('home/index', {
       govukCaption,
@@ -20,6 +21,7 @@ const homeController = {
       textBeforeStartNowSection,
       textAfterStartNowSection,
       relatedContentSection,
+      getHelpSection,
       pageTitle: 'Home',
       heading: '',
       breadcrumbs: [
