@@ -2,61 +2,57 @@
   "govukcaption": "Guidance",
   "govukheading": "Check plant health information and import rules",
   "govukbodytitle": "Use this service to find information on the pest or disease risks of importing a plant to Great Britain (England, Scotland and Wales).",
-  "publishedSection" : {
-  "publishedUrl": {
-    "a1" : {
-      "href1": "https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs",
-      "text1": "Department for Environment, Food & Rural Affairs"
+  "publishedSection": {
+    "publishedUrl": {
+      "a1": {
+        "href1": "https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs",
+        "text1": "Department for Environment, Food & Rural Affairs"
+      },
+      "a2": {
+        "href2": "https://www.gov.uk/government/organisations/animal-and-plant-health-agency",
+        "text2": "Animal and Plant Health Agency"
+      }
     },
-    "a2": {
-      "href2": "https://www.gov.uk/government/organisations/animal-and-plant-health-agency",
-      "text2": "Animal and Plant Health Agency"
-    }
-  },
-  "publishedOtherText": {
-    "t1": "From:",
-    "t2": "and"
-  },
-  "publishedDates": 
-    {
+    "publishedOtherText": {
+      "t1": "From:",
+      "t2": "and"
+    },
+    "publishedDates": {
       "text1": "Published 14 December 2023",
       "text2": "Last updated 23 February 2024 —"
-    }
-  ,
-  "publishedUpdates": 
-    {
+    },
+    "publishedUpdates": {
       "href": "https://www.gov.uk/guidance/import-plants-and-plant-products-from-the-eu-to-great-britain#full-publication-update-history",
       "text": "See all updates"
-    
     }
-},
-"appliesToSection": {
-  "appliesToText": "Applies to\r\n England, Scotland and Wales",
-  "appliesToUrl": {
-    "href": "https://www.daera-ni.gov.uk/publications/import-requirements-plants-plant-produce-and-other-objects",
-    "text": "Guidance for Northern Ireland"
+  },
+  "appliesToSection": {
+    "appliesToText": "Applies to\r\n England, Scotland and Wales",
+    "appliesToUrl": {
+      "href": "https://www.daera-ni.gov.uk/publications/import-requirements-plants-plant-produce-and-other-objects",
+      "text": "Guidance for Northern Ireland"
     }
-},
-"textBeforeStartNowSection": {
+  },
+  "textBeforeStartNowSection": {
     "paragraphText1": "Use this service to find out",
-     "bulletText1": "the latest rules for importing plants or plant products",
-     "bulletText2": "if a plant could carry pests and diseases that need reporting",
-     "bulletText3": "current information on non-native plants pests and diseases\r\n that are a risk to Great Britain"
-},
-"textAfterStartNowSection": {
-  "headerText":  "Before you start",
-  "paragraphText1": "You'll need the name of the plant/ plant product/ pest or disease to find plant\r\n health\r\n information",
-  "paragraphText2":  "You can use:",
-  "paragraphText3":  "This service",
-  "bulletText1": "the scientific name or any synonyms",
-  "bulletText2": "a common name in some cases",
-  "bulletText3": "does not provide trade information about exporting plants or plant products",
-  "bulletText4": "it is not a pest or disease identification service",
-  "bulletText5": "does not have information about pests and diseases native to Great Britain"
-},
-"relatedContentSection": {
-  "headerText": "Related content",
-  "relatedurls": {
+    "bulletText1": "the latest rules for importing plants or plant products",
+    "bulletText2": "if a plant could carry pests and diseases that need reporting",
+    "bulletText3": "current information on non-native plants pests and diseases\r\n that are a risk to Great Britain"
+  },
+  "textAfterStartNowSection": {
+    "headerText": "Before you start",
+    "paragraphText1": "You'll need the name of the plant/ plant product/ pest or disease to find plant\r\n health\r\n information",
+    "paragraphText2": "You can use:",
+    "paragraphText3": "This service",
+    "bulletText1": "the scientific name or any synonyms",
+    "bulletText2": "a common name in some cases",
+    "bulletText3": "does not provide trade information about exporting plants or plant products",
+    "bulletText4": "it is not a pest or disease identification service",
+    "bulletText5": "does not have information about pests and diseases native to Great Britain"
+  },
+  "relatedContentSection": {
+    "headerText": "Related content",
+    "relatedurls": {
       "a1": {
         "href1": "https://www.gov.uk/guidance/import-plants-and-plant-products-from-the-eu-to-great-britain#register-and-pre-notify-your-goods-on-the-relevant-import-it-system",
         "text1": "Import plants and plant products from the EU to Great Britain"
@@ -89,6 +85,6 @@
         "href8": "https://planthealthportal.defra.gov.uk/pests-and-diseases/reporting-a-pestdisease/",
         "text8": "Reporting a\r\n plant pest or disease"
       }
+    }
   }
-}
 }

@@ -5,11 +5,21 @@ const homeController = {
     const govukHeading = data?.govukheading
     const govukCaption = data?.govukcaption
     const govukBodyTitle = data?.govukbodytitle
+    const publishedSection = data?.publishedSection
+    const appliesToSection = data?.appliesToSection
+    const textBeforeStartNowSection = data?.textBeforeStartNowSection
+    const textAfterStartNowSection = data?.textAfterStartNowSection
+    const relatedContentSection = data?.relatedContentSection
 
     return h.view('home/index', {
       govukCaption,
       govukHeading,
       govukBodyTitle,
+      publishedSection,
+      appliesToSection,
+      textBeforeStartNowSection,
+      textAfterStartNowSection,
+      relatedContentSection,
       pageTitle: 'Home',
       heading: '',
       breadcrumbs: [
