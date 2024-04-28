@@ -1,12 +1,13 @@
 import { getDefaultLocaleData } from '../localisation'
 const homeController = {
   handler: (request, h) => {
-    request.yar.set('purposeOfVisitRadiooption', null)
-    request.yar.set('importConfirmationRadiooption', null)
+    // request.yar.set('purposeOfVisitRadiooption', null)
+    // request.yar.set('importConfirmationRadiooption', null)
     const data = getDefaultLocaleData('home')
     const govukHeading = data?.govukheading
     const govukCaption = data?.govukcaption
     const govukBodyTitle = data?.govukbodytitle
+    const buttonText = data?.buttonText
     const publishedSection = data?.publishedSection
     const appliesToSection = data?.appliesToSection
     const textBeforeStartNowSection = data?.textBeforeStartNowSection
@@ -18,6 +19,7 @@ const homeController = {
       govukCaption,
       govukHeading,
       govukBodyTitle,
+      buttonText,
       publishedSection,
       appliesToSection,
       textBeforeStartNowSection,

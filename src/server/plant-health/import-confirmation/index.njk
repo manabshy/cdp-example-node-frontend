@@ -1,6 +1,6 @@
 {% extends 'layouts/page.njk' %}
 {% block beforeContent %}
-  <a href="/plant-health" class="govuk-back-link" type='button'>Back</a>
+  <a href="/plant-health" class="govuk-back-link" type='button'>Back{{radioButtonValue}}</a>
 {% endblock %}
 {% block content %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -9,13 +9,13 @@
  {% if errors %}
     {{ govukErrorSummary(errors) }}
   {% endif %}
-<form  id="itembox" action='/plant-health/import-confirmation' method="get"  name="radios" value="ni">
+<form  id="itembox" action='/plant-health/import-confirmation' method="get"  name="radios">
 {{ govukRadios({
   name: "whereareyouimportinginto",
   errorMessage: errorMessageRadio,
   fieldset: {
     legend: {
-      text: "Where are you importing plant or plant product into?",
+      text: mainContent.headerText,
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
@@ -23,12 +23,12 @@
   items: [
     {
       value: "gb",
-      text: "Great Britain (England, Scotland and Wales)",
+      text:  mainContent.radioButtonText1,
       checked: radiobuttonValue === 'gb'
     },
     {
       value: "ni",
-      text: "Northern Ireland",
+      text: mainContent.radioButtonText2,
       checked: radiobuttonValue === 'ni'
     }
   ]
@@ -37,9 +37,10 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 {{ govukButton({
-  text: "Continue"
+  text: mainContent.buttonText
 }) }}
 </form>
+{% set supportSection = { title: getHelpSection.titleText, supportMail: getHelpSection.supportUrl.href, email: getHelpSection.supportUrl.email, description: getHelpSection.supportUrl.text } %}
 {% include "partials/get-help.njk" %}
 {% endcall %}
 {% endblock %}

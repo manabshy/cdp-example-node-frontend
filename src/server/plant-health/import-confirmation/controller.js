@@ -1,6 +1,12 @@
+import { getDefaultLocaleData } from '~/src/server/localisation'
 const importConfirmationController = {
   handler: (request, h) => {
     if (request != null) {
+      const data = getDefaultLocaleData('import-confirmation')
+      const mainContent = data?.mainContent
+      const getHelpSection = data?.getHelpSection
+      const serviceUnavailablePage = data?.serviceUnavailablePage
+
       let radiobuttonValue
       if (request.query.whereareyouimportinginto === 'gb') {
         radiobuttonValue = request.query.Whereareyouimportinginto
@@ -18,6 +24,8 @@ const importConfirmationController = {
         return h.view(
           'plant-health/import-confirmation/service-unavailable.njk',
           {
+            serviceUnavailablePage,
+            getHelpSection,
             pageTitle: 'ImportConfirmation',
             heading: 'ImportConfirmation'
           }
@@ -49,9 +57,11 @@ const importConfirmationController = {
         const errors = request.yar?.get('errors')
         const errorMessage = request.yar?.get('errorMessage')
         return h.view('plant-health/import-confirmation/index', {
+          mainContent,
+          getHelpSection,
+          radiobuttonValue,
           pageTitle: 'ImportConfirmation',
           heading: 'ImportConfirmation',
-          radiobuttonValue,
           errors: errors?.errors,
           errorMessage: errorMessage?.errorMessage,
           errorMessageRadio: errorMessage?.errorMessage
