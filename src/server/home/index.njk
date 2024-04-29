@@ -1,0 +1,132 @@
+{% extends 'layouts/page.njk' %}
+{% block content %}
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-caption-l">{{govukCaption}}</span>
+          <h1 class="govuk-heading-l">{{govukHeading}}</h1>
+          <p class="govuk-body-l">{{govukBodyTitle}}</p>
+        </p>
+        </div>
+        <div class="govuk-grid-column-full">
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <p class="govuk-body">
+            <dl>
+              <dt class="govuk-!-margin-bottom-1">{{publishedSection.publishedOtherText.t1}} 
+              <a href={{publishedSection.publishedUrl.a1.href1}}>
+                {{publishedSection.publishedUrl.a1.text1}}</a> {{publishedSection.publishedOtherText.t2}}
+              <a href={{publishedSection.publishedUrl.a2.href2}}>
+                {{publishedSection.publishedUrl.a2.text2}}</a>
+              </dt>
+              <dt class="govuk-!-margin-bottom-1">{{publishedSection.publishedDates.text1}}</dt>
+              <dt class="govuk-!-margin-bottom-1">{{publishedSection.publishedDates.text2}}
+              <a
+                href={{publishedSection.publishedUpdates.href}}>
+                {{publishedSection.publishedUpdates.text}}</a>
+              </dt>
+              </dl>
+            </p>
+          </div>
+        </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <div class="div-background govuk-!-padding-bottom-1 govuk-!-padding-top-2">
+              <h1 class="govuk-!-margin-bottom-2 govuk-!-margin-left-2 govuk-heading-s" id="query" name="query">{{appliesToSection.appliesToText}}</h1>
+              <p class="govuk-body-s govuk-!-margin-left-2">
+                <a
+            href={{appliesToSection.appliesToUrl.href}}>
+            {{appliesToSection.appliesToUrl.text}}</a>
+              </p>
+            </div>
+            <p class="govuk-body-s govuk-!-margin-bottom-2 govuk-!-margin-top-2">{{textBeforeStartNowSection.paragraphText1}}</p>
+            <ul class="govuk-body-s govuk-!-margin-bottom-1">
+              <li>{{textBeforeStartNowSection.bulletText1}}</li>
+              <li>{{textBeforeStartNowSection.bulletText2}}</li>
+              <li class="govuk-!-margin-bottom-4">{{textBeforeStartNowSection.bulletText3}}</li>
+            </ul>
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+            {{ 
+          govukButton({
+            text: buttonText,
+            href: "/plant-health",
+            isStartButton: true
+        }) 
+        }}
+            <h3 class="govuk-heading-m">{{textAfterStartNowSection.headerText}}</h3>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">{{textAfterStartNowSection.paragraphText1}}</p>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">{{textAfterStartNowSection.paragraphText2}}</p>
+            <ul class="govuk-body-s govuk-!-margin-bottom-1">
+              <li>{{textAfterStartNowSection.bulletText1}}</li>
+              <li>{{textAfterStartNowSection.bulletText2}}</li>
+            </ul>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">{{textAfterStartNowSection.paragraphText3}}</p>
+            <ul class="govuk-body-s govuk-!-margin-bottom-1">
+              <li>{{textAfterStartNowSection.bulletText3}}</li>
+              <li>{{textAfterStartNowSection.bulletText4}}</li>
+              <li>{{textAfterStartNowSection.bulletText5}}/li>
+            </ul>
+
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <hr class="horizontal_line govuk-section-break govuk-section-break--visible">
+            <h2 class="govuk-heading-s govuk-!-margin-top-1">{{relatedContentSection.headerText}}</h2>
+            <div class="govuk-body-s">
+              <p class="govuk-body-s govuk-!-margin-bottom-1">
+                <a
+              href={{relatedContentSection.relatedurls.a1.href1}}>
+              {{relatedContentSection.relatedurls.a1.text1}}</a>
+              </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">
+                <a
+              href={{relatedContentSection.relatedurls.a2.href2}}>
+              {{relatedContentSection.relatedurls.a2.text2}}</a>
+              </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">
+                <a href={{relatedContentSection.relatedurls.a3.href3}}>
+              {{relatedContentSection.relatedurls.a3.text3}}</a>
+              </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">
+                <a href={{relatedContentSection.relatedurls.a4.href4}}>
+              {{relatedContentSection.relatedurls.a4.text4}}</a>
+              </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">
+                <a href={{relatedContentSection.relatedurls.a5.href5}}>
+              {{relatedContentSection.relatedurls.a5.text5}}</a>
+              </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">
+                <a href={{relatedContentSection.relatedurls.a6.href6}}>
+              {{relatedContentSection.relatedurls.a6.text6}}</a>
+              </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">
+                <a href={{relatedContentSection.relatedurls.a7.href7}}>{{relatedContentSection.relatedurls.a7.text7}}</a>
+              </p>
+              <p class="govuk-body-s">
+                <a href={{relatedContentSection.relatedurls.a8.href8}}>{{relatedContentSection.relatedurls.a8.text8}}</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        {% set supportSection = { title: getHelpSection.titleText, supportMail: getHelpSection.supportUrl.href, email: getHelpSection.supportUrl.email, description: getHelpSection.supportUrl.text } %}
+        {% include "partials/get-help.njk" %}
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+            <p class="govuk-body">
+              <dl>
+                <dt class="govuk-!-margin-bottom-1">{{publishedSection.publishedDates.text1}}</dt>
+                <dt class="govuk-!-margin-bottom-1">{{publishedSection.publishedDates.text2}}
+              <a
+                href={{publishedSection.publishedUpdates.href}}>
+                {{publishedSection.publishedUpdates.text}}</a>
+                </dt>
+              </p>
+            </div>
+          </div>
+        </main>
+      </div>
+    {% endblock %}
