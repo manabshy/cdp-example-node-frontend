@@ -8,16 +8,12 @@
   "getHelpSection": {
     "titleText": "Get help with this service",
     "supportUrl": {
-      "href": "mailto:planthealth.info@apha.gov.uk?subject=Plant%20Health%20Information%20Service",
-      "text": "if you have any queries or you need technical support, email",
-      "email": "planthealth.info@apha.gov.uk"
+      "text": "if you have any queries or you need technical support, email"
     }
   },
   "serviceUnavailablePage": {
     "headerText": "This service does not contain import and plant health information for Northern Ireland",
     "desc1": "You will be able to use the service later.",
-    "desc2": "There are different plant health controls for Northern Ireland and Great Britain. You can",
-    "urlText": "view import requirements for plants and plant produce for Northern Ireland",
-    "url": "https://www.daera-ni.gov.uk/publications/import-requirements-plants-plant-produce-and-other-objects"
+    "desc2": "There are different plant health controls for Northern Ireland and Great Britain. You can"
   }
 }

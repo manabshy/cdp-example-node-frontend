@@ -15,7 +15,6 @@
         }}
     </div>
   </div>
-
- 
-
+{% set supportSection = { title: getHelpSection.titleText, supportMail: getHelpSection.supportUrl.href, email: getHelpSection.supportUrl.email, description: getHelpSection.supportUrl.text } %}
+{% include "partials/get-help.njk" %}
 {% endblock %}

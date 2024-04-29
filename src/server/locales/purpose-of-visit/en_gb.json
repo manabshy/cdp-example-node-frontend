@@ -8,9 +8,7 @@
   "getHelpSection": {
     "titleText": "Get help with this service",
     "supportUrl": {
-      "href": "mailto:planthealth.info@apha.gov.uk?subject=Plant%20Health%20Information%20Service",
-      "text": "if you have any queries or you need technical support, email",
-      "email": "planthealth.info@apha.gov.uk"
+      "text": "if you have any queries or you need technical support, email"
     }
   },
   "serviceUnavailablePage": {
