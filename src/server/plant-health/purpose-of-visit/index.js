@@ -1,6 +1,6 @@
 import { purposeOfVisitController } from '~/src/server/plant-health/purpose-of-visit/controller'
 
-const purposeofvisit = {
+const purposeOfVisit = {
   plugin: {
     name: 'purpose-of-visit',
     register: async (server) => {
@@ -15,4 +15,4 @@ const purposeofvisit = {
   }
 }
 
-export { purposeofvisit }
+export { purposeOfVisit }

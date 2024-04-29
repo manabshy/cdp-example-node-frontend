@@ -2,9 +2,9 @@ import inert from '@hapi/inert'
 import yar from '@hapi/yar'
 import { health } from '~/src/server/health'
 import { home } from '~/src/server/home'
-import { importconfirmation } from '~/src/server/plant-health/import-confirmation'
-import { planthealth } from '~/src/server/plant-health'
-import { purposeofvisit } from '~/src/server/plant-health/purpose-of-visit'
+import { importConfirmation } from '~/src/server/plant-health/import-confirmation'
+import { plantHealth } from '~/src/server/plant-health'
+import { purposeOfVisit } from '~/src/server/plant-health/purpose-of-visit'
 import { serveStaticFiles } from '~/src/server/common/helpers/serve-static-files'
 
 const options = {
@@ -23,9 +23,9 @@ const router = {
       await server.register([
         health,
         home,
-        importconfirmation,
-        planthealth,
-        purposeofvisit,
+        importConfirmation,
+        plantHealth,
+        purposeOfVisit,
         serveStaticFiles
       ])
       await server.register({
