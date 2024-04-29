@@ -1,0 +1,23 @@
+{
+  "mainContent": {
+    "headerText": "I ble ydych chi'n mewnforio planhigion neu gynnyrch planhigion?",
+    "radioButtonText1": "Prydain Fawr (Cymru, Lloegr a'r Alban)",
+    "radioButtonText2": "Gogledd Iwerddon",
+    "buttonText": "Parhewch"
+  },
+  "getHelpSection": {
+    "titleText": "Cael help gyda'r gwasanaeth hwn",
+    "supportUrl": {
+      "href": "mailto:planthealth.info@apha.gov.uk?subject=Plant%20Health%20Information%20Service",
+      "text": "os oes gennych unrhyw ymholiadau neu os oes angen cymorth technegol arnoch, e-bostiwch",
+      "email": "planthealth.info@apha.gov.uk"
+    }
+  },
+  "serviceUnavailablePage": {
+    "headerText": "Nid yw'r gwasanaeth hwn yn cynnwys gwybodaeth am fewnforion ac iechyd planhigion ar gyfer Gogledd Iwerddon",
+    "desc1": "Byddwch yn gallu defnyddio'r gwasanaeth yn ddiweddarach.",
+    "desc2": "Mae gwahanol reolaethau iechyd planhigion ar gyfer Gogledd Iwerddon a Phrydain Fawr. Gallwch chi",
+    "urlText": "gweld gofynion mewnforio ar gyfer planhigion a chynnyrch planhigion ar gyfer Gogledd Iwerddon",
+    "url": "https://www.daera-ni.gov.uk/publications/import-requirements-plants-plant-produce-and-other-objects"
+  }
+}
