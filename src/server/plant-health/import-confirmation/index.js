@@ -1,6 +1,6 @@
 import { importConfirmationController } from '~/src/server/plant-health/import-confirmation/controller'
 
-const importconfirmation = {
+const importConfirmation = {
   plugin: {
     name: 'plant',
     register: async (server) => {
@@ -15,4 +15,4 @@ const importconfirmation = {
   }
 }
 
-export { importconfirmation }
+export { importConfirmation }

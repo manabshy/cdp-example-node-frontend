@@ -6,7 +6,6 @@
 {% block content %}
 {% call appPageBody() %}
 {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
-
  {% if errors %}
     {{ govukErrorSummary(errors) }}
   {% endif %}
@@ -16,7 +15,7 @@
   errorMessage: errorMessageRadio,
   fieldset: {
     legend: {
-      text: "What do you want to find?",
+      text: mainContent.headerText,
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
@@ -24,12 +23,12 @@
   items: [
     {
       value: "importrules",
-      text: "Plant or plant product import rules",
+      text: mainContent.radioButtonText1,
       checked: radiobuttonValue === 'importrules'
     },
     {
       value: "pest",
-      text: "Pest or disease information",
+      text: mainContent.radioButtonText2,
       checked: radiobuttonValue === 'pest'
     }
   ]
@@ -38,9 +37,10 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 {{ govukButton({
-  text: "Continue"
+  text: mainContent.buttonText
 }) }}
 </form>
- {% include "partials/get-help.njk" %}
+{% set supportSection = { title: getHelpSection.titleText, supportMail: getHelpSection.supportUrl.href, email: getHelpSection.supportUrl.email, description: getHelpSection.supportUrl.text } %}
+{% include "partials/get-help.njk" %}
 {% endcall %}
 {% endblock %}

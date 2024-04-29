@@ -6,17 +6,17 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">This service does not contain import and plant health information for Northern Ireland</h1>
+      <h1 class="govuk-heading-l">{{serviceUnavailablePage.headerText}}</h1>
       <p class="govuk-body">
-        You will be able to use the service later.
+        {{serviceUnavailablePage.desc1}}
       </p>
       <p class="govuk-body">
-        There are different plant health controls for Northern Ireland and Great Britain. You can
-      <a class="govuk-link" href="#">
-      
-        view import requirements for plants and plant produce for Northern Ireland</a>
+        {{serviceUnavailablePage.desc2}}
+      <a class="govuk-link" href="https://www.daera-ni.gov.uk/publications/import-requirements-plants-plant-produce-and-other-objects">
+       view import requirements for plants and plant produce for Northern Ireland</a>
       </p>
     </div>
   </div>
-  {% include "partials/get-help.njk" %}
+{% set supportSection = { title: getHelpSection.titleText, supportMail: getHelpSection.supportUrl.href, email: getHelpSection.supportUrl.email, description: getHelpSection.supportUrl.text } %}
+{% include "partials/get-help.njk" %}
 {% endblock %}

@@ -1,6 +1,6 @@
 import { plantHealthController } from '~/src/server/plant-health/controller'
 
-const planthealth = {
+const plantHealth = {
   plugin: {
     name: 'plant-health',
     register: async (server) => {
@@ -15,4 +15,4 @@ const planthealth = {
   }
 }
 
-export { planthealth }
+export { plantHealth }

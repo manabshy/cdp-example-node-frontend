@@ -1,6 +1,12 @@
+import { getDefaultLocaleData } from '~/src/server/localisation'
 const importConfirmationController = {
   handler: (request, h) => {
     if (request != null) {
+      const data = getDefaultLocaleData('import-confirmation')
+      const mainContent = data?.mainContent
+      const getHelpSection = data?.getHelpSection
+      const serviceUnavailablePage = data?.serviceUnavailablePage
+
       let radiobuttonValue
       if (request.query.whereareyouimportinginto === 'gb') {
         radiobuttonValue = request.query.Whereareyouimportinginto
@@ -18,6 +24,8 @@ const importConfirmationController = {
         return h.view(
           'plant-health/import-confirmation/service-unavailable.njk',
           {
+            serviceUnavailablePage,
+            getHelpSection,
             pageTitle: 'ImportConfirmation',
             heading: 'ImportConfirmation'
           }
@@ -28,30 +36,33 @@ const importConfirmationController = {
         request.yar.set('errorMessageRadio', '')
         const radiooption = request?.yar?.get('importConfirmationRadiooption')
         radiobuttonValue = radiooption?.whereareyouimportinginto
+        const errorData = getDefaultLocaleData('import-confirmation')
+        const errorSection = errorData?.errors
+
         if (!radiobuttonValue) {
           request.yar.set('errors', {
             errors: {
-              titleText: 'There is a problem',
+              titleText: errorSection.titleText,
               errorList: [
                 {
-                  text: 'Select where are you importing plant or plant product into',
+                  text: errorSection.importConfirmationErrorListText,
                   href: '#itembox'
                 }
               ]
             }
           })
           request.yar.set('errorMessage', {
-            errorMessage: {
-              text: 'Select where are you importing plant or plant product into'
-            }
+            errorMessage: { text: errorSection.importConfirmationErrorListText }
           })
         }
         const errors = request.yar?.get('errors')
         const errorMessage = request.yar?.get('errorMessage')
         return h.view('plant-health/import-confirmation/index', {
+          mainContent,
+          getHelpSection,
+          radiobuttonValue,
           pageTitle: 'ImportConfirmation',
           heading: 'ImportConfirmation',
-          radiobuttonValue: radiobuttonValue,
           errors: errors?.errors,
           errorMessage: errorMessage?.errorMessage,
           errorMessageRadio: errorMessage?.errorMessage
