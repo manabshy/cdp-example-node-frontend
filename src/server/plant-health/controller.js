@@ -4,6 +4,7 @@ const plantHealthController = {
     const data = getDefaultLocaleData('plant-health')
     const mainContent = data?.mainContent
     const getHelpSection = data?.getHelpSection
+
     if (request != null) {
       request.yar.set('errors', '')
       request.yar.set('errorMessage', '')

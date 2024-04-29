@@ -15,5 +15,9 @@
     "headerText": "Nid yw'r gwasanaeth hwn yn cynnwys gwybodaeth am fewnforion ac iechyd planhigion ar gyfer Gogledd Iwerddon",
     "desc1": "Byddwch yn gallu defnyddio'r gwasanaeth yn ddiweddarach.",
     "desc2": "Mae gwahanol reolaethau iechyd planhigion ar gyfer Gogledd Iwerddon a Phrydain Fawr. Gallwch chi"
+  },
+  "errors": {
+    "titleText": "There is a problem",
+    "importConfirmationErrorListText": "Select where are you importing plant or plant product into"
   }
 }

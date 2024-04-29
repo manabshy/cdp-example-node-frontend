@@ -1,8 +1,13 @@
 import { getDefaultLocaleData } from '../localisation'
 const homeController = {
   handler: (request, h) => {
+    // ========== ========== ========== ========== ==========
+    // set null if there are any
+    // cookies on click of start now button
+    // ========== ========== ========== ========== ==========
     request.yar.set('purposeOfVisitRadiooption', null)
     request.yar.set('importConfirmationRadiooption', null)
+
     const data = getDefaultLocaleData('home')
     const govukHeading = data?.govukheading
     const govukCaption = data?.govukcaption

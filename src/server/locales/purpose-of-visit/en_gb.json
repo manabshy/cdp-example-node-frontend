@@ -15,5 +15,9 @@
     "headerText": "Pest or disease information unavailable",
     "description": "You cannot currently use this service to lookup pests or diseases. We will add this information soon",
     "buttonText": "Go Back"
+  },
+  "errors": {
+    "titleText": "There is a problem",
+    "purposeOfVisitErrorListText": "Select what do you want to find"
   }
 }

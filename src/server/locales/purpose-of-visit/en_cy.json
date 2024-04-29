@@ -15,5 +15,9 @@
     "headerText": "Nid oes gwybodaeth am blâu neu glefydau ar gael",
     "description": "Ni allwch ddefnyddio'r gwasanaeth hwn ar hyn o bryd i chwilio am blâu neu afiechydon. Byddwn yn ychwanegu'r wybodaeth hon yn fuan",
     "buttonText": "Mynd yn ôl"
+  },
+  "errors": {
+    "titleText": "There is a problem",
+    "purposeOfVisitErrorListText": "Select what do you want to find"
   }
 }

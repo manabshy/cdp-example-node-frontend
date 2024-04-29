@@ -15,5 +15,9 @@
     "headerText": "This service does not contain import and plant health information for Northern Ireland",
     "desc1": "You will be able to use the service later.",
     "desc2": "There are different plant health controls for Northern Ireland and Great Britain. You can"
+  },
+  "errors": {
+    "titleText": "There is a problem",
+    "importConfirmationErrorListText": "Select where are you importing plant or plant product into"
   }
 }

@@ -36,22 +36,23 @@ const importConfirmationController = {
         request.yar.set('errorMessageRadio', '')
         const radiooption = request?.yar?.get('importConfirmationRadiooption')
         radiobuttonValue = radiooption?.whereareyouimportinginto
+        const errorData = getDefaultLocaleData('import-confirmation')
+        const errorSection = errorData?.errors
+
         if (!radiobuttonValue) {
           request.yar.set('errors', {
             errors: {
-              titleText: 'There is a problem',
+              titleText: errorSection.titleText,
               errorList: [
                 {
-                  text: 'Select where are you importing plant or plant product into',
+                  text: errorSection.importConfirmationErrorListText,
                   href: '#itembox'
                 }
               ]
             }
           })
           request.yar.set('errorMessage', {
-            errorMessage: {
-              text: 'Select where are you importing plant or plant product into'
-            }
+            errorMessage: { text: errorSection.importConfirmationErrorListText }
           })
         }
         const errors = request.yar?.get('errors')

@@ -5,6 +5,7 @@ const purposeOfVisitController = {
     const serviceUnavailablePage = data?.serviceUnavailablePage
     const mainContent = data?.mainContent
     const getHelpSection = data?.getHelpSection
+
     if (request != null) {
       let radiobuttonValue
       if (request.query.whatdoyouwanttofind === 'importrules') {
@@ -36,22 +37,25 @@ const purposeOfVisitController = {
         const plantHealthdata = getDefaultLocaleData('plant-health')
         const mainContent = plantHealthdata?.mainContent
         const getHelpSection = plantHealthdata?.getHelpSection
+        const errorData = getDefaultLocaleData('purpose-of-visit')
+        const errorSection = errorData?.errors
         const radiooption = request?.yar?.get('purposeOfVisitRadiooption')
         radiobuttonValue = radiooption?.purposeOfVisit
+
         if (!radiobuttonValue) {
           request.yar.set('errors', {
             errors: {
-              titleText: 'There is a problem',
+              titleText: errorSection.titleText,
               errorList: [
                 {
-                  text: 'Select what do you want to find',
+                  text: errorSection.purposeOfVisitErrorListText,
                   href: '#itembox'
                 }
               ]
             }
           })
           request.yar.set('errorMessage', {
-            errorMessage: { text: 'Select what do you want to find' }
+            errorMessage: { text: errorSection.purposeOfVisitErrorListText }
           })
         }
         const errors = request.yar?.get('errors')
